@@ -125,4 +125,98 @@ salario = horas_trabalhadas * valor_por_hora
 
 print("NUMBER =", numero_funcionario)
 print("SALARY = R$", format(salario, ".2f"))
+
+# Atividade Prática 03
+# 1 - Área da Circunferência
+raio = float(input())
+PI = 3.14159265
+area = PI * (raio ** 2)
+print(f"A={area:.4f}")
+
+# 2 - Classificador de Idade
+idade = int(input("Digite a idade: "))
+if 0 <= idade <= 12:
+    print("Criança")
+elif idade <= 17:
+    print("Adolescente")
+elif idade <= 59:
+    print("Adulto")
+else:
+    print("Idoso")
+
+# 3 - Calculadora de IMC
+peso = float(input("Digite o peso (kg): "))
+altura = float(input("Digite a altura (m): "))
+imc = peso / (altura ** 2)
+print(f"IMC: {imc:.2f}")
+if imc < 18.5:
+    print("Classificacao: Abaixo do peso")
+elif imc < 25:
+    print("Classificacao: Peso normal")
+elif imc < 30:
+    print("Classificacao: Sobrepeso")
+else:
+    print("Classificacao: Obeso")
+
+# 4 - Conversor de Temperatura
+temp = float(input("Digite a temperatura: "))
+origem = input("Digite a unidade de origem (C/F/K): ").upper()
+destino = input("Digite a unidade de destino (C/F/K): ").upper()
+resultado = temp
+if origem == 'C':
+    if destino == 'F':
+        resultado = (temp * 9/5) + 32
+    elif destino == 'K':
+        resultado = temp + 273.15
+elif origem == 'F':
+    if destino == 'C':
+        resultado = (temp - 32) * 5/9
+    elif destino == 'K':
+        resultado = (temp - 32) * 5/9 + 273.15
+elif origem == 'K':
+    if destino == 'C':
+        resultado = temp - 273.15
+    elif destino == 'F':
+        resultado = (temp - 273.15) * 9/5 + 32
+else:
+    print("Unidade de origem inválida")
+    exit()
+print(f"Temperatura convertida: {resultado:.2f}")
+
+# 5 - Verificador de Ano Bissexto
+ano = int(input("Digite o ano: "))
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    print("Ano bissexto")
+else:
+    print("Nao eh ano bissexto")
+
+# 6 - Calculadora de Comissão
+nome = input()
+salario_fixo = float(input())
+total_vendas = float(input())
+total_receber = salario_fixo + (total_vendas * 0.15)
+print(f"TOTAL = R$ {total_receber:.2f}")
+
+# 7 - Calculadora da Média
+N1, N2, N3, N4 = map(float, input().split())
+media = (N1 * 2 + N2 * 3 + N3 * 4 + N4 * 1) / 10
+print(f"Media: {media:.1f}")
+if media >= 7.0:
+    print("Aluno aprovado.")
+elif media < 5.0:
+    print("Aluno reprovado.")
+else:
+    print("Aluno em exame.")
+    exame = float(input())
+    print(f"Nota do exame: {exame:.1f}")
+    media_final = (media + exame) / 2
+    if media_final >= 5.0:
+        print("Aluno aprovado.")
+    else:
+        print("Aluno reprovado.")
+    print(f"Media final: {media_final:.1f}")
+
+
+
+
  
